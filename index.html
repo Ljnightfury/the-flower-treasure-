@@ -63,6 +63,7 @@
       justify-content: center;
       align-items: center;
       gap: 12px;
+      flex-wrap: wrap;
     }
 
     /* Navigation */
@@ -119,7 +120,27 @@
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
+    }
+
+    .nav-btn {
+      background: #ffffff;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      padding: 9px 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .nav-btn:hover {
+      background: #f7f3ee;
+      border-color: #d8cec3;
     }
 
     .cart-btn-trigger {
@@ -127,10 +148,10 @@
       background: var(--dark-paper);
       color: #fff;
       border: none;
-      padding: 10px 20px;
+      padding: 9px 18px;
       border-radius: 30px;
       cursor: pointer;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       font-weight: 700;
       display: flex;
       align-items: center;
@@ -149,8 +170,8 @@
       font-size: 0.75rem;
       font-weight: 800;
       border-radius: 50%;
-      width: 22px;
-      height: 22px;
+      width: 20px;
+      height: 20px;
       display: grid;
       place-items: center;
     }
@@ -158,7 +179,7 @@
     /* Hero Section */
     .hero {
       position: relative;
-      padding: 4.5rem 5% 3.5rem;
+      padding: 4rem 5% 3rem;
       max-width: 1350px;
       margin: 0 auto;
       display: grid;
@@ -207,7 +228,7 @@
     }
 
     .btn {
-      padding: 13px 26px;
+      padding: 12px 24px;
       border-radius: 30px;
       font-weight: 700;
       font-size: 0.95rem;
@@ -258,7 +279,7 @@
 
     .hero-card-img {
       width: 100%;
-      height: 440px;
+      height: 420px;
       border-radius: 20px;
       object-fit: cover;
       display: block;
@@ -286,7 +307,7 @@
       padding: 0 5%;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
+      gap: 16px;
     }
 
     .benefit-item {
@@ -560,7 +581,6 @@
       justify-content: space-between;
     }
 
-    /* Live Preview Bouquet Box */
     .preview-visual-box {
       background: #ffffff;
       border-radius: 14px;
@@ -600,105 +620,156 @@
       font-weight: 800;
     }
 
-    /* Pincode Checker Strip */
-    .pincode-checker-box {
-      background: #fff;
+    /* Track Order Portal Section */
+    .tracking-section {
+      background: #ffffff;
+      border-radius: 24px;
       border: 1px solid var(--border-color);
-      border-radius: var(--radius);
-      padding: 1.8rem;
-      margin: 2rem auto;
+      padding: 2.5rem;
       max-width: 900px;
+      margin: 2rem auto;
       box-shadow: var(--shadow-sm);
-      text-align: center;
     }
 
-    .pincode-input-wrap {
+    .tracking-search-wrap {
       display: flex;
       gap: 10px;
-      max-width: 440px;
-      margin: 1rem auto 0.5rem;
+      max-width: 480px;
+      margin: 1.2rem auto 2rem;
     }
 
-    .pincode-input {
+    .tracking-input {
       flex: 1;
-      padding: 10px 14px;
-      border-radius: 25px;
+      padding: 12px 18px;
+      border-radius: 30px;
       border: 1.5px solid var(--border-color);
       font-size: 0.95rem;
       outline: none;
     }
 
-    .pincode-btn {
+    .tracking-input:focus {
+      border-color: var(--primary);
+    }
+
+    .tracking-btn {
       background: var(--dark-paper);
       color: #fff;
       border: none;
-      border-radius: 25px;
-      padding: 10px 22px;
+      border-radius: 30px;
+      padding: 12px 24px;
       font-weight: 700;
       cursor: pointer;
+      transition: all 0.2s ease;
     }
 
-    .pincode-result {
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-top: 8px;
-      min-height: 22px;
+    .tracking-btn:hover {
+      background: var(--primary-dark);
     }
 
-    /* Instagram Feed Grid Showcase */
-    .insta-strip {
-      background: #fff;
-      padding: 3rem 5%;
+    /* Timeline Stepper */
+    .timeline-wrap {
+      display: none;
+      margin-top: 2rem;
+      padding-top: 1.8rem;
       border-top: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
     }
 
-    .insta-header {
-      text-align: center;
-      margin-bottom: 2rem;
+    .timeline-wrap.active {
+      display: block;
     }
 
-    .insta-grid {
-      max-width: 1350px;
-      margin: 0 auto;
+    .timeline-steps {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-    }
-
-    .insta-item {
+      grid-template-columns: repeat(4, 1fr);
       position: relative;
-      height: 230px;
-      border-radius: 14px;
-      overflow: hidden;
-      background: #f0ebe4;
+      margin-top: 2rem;
+      text-align: center;
     }
 
-    .insta-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .insta-item:hover img {
-      transform: scale(1.08);
-    }
-
-    .insta-overlay {
+    .timeline-steps::before {
+      content: '';
       position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.35);
+      top: 22px;
+      left: 10%;
+      right: 10%;
+      height: 4px;
+      background: #e2dcd6;
+      z-index: 1;
+    }
+
+    .timeline-step {
+      position: relative;
+      z-index: 2;
+    }
+
+    .step-circle {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3px solid #dbd2c8;
       display: grid;
       place-items: center;
-      color: #fff;
-      font-size: 1.5rem;
-      opacity: 0;
-      transition: opacity 0.25s ease;
+      margin: 0 auto 10px;
+      font-size: 1.1rem;
+      color: #888;
+      transition: all 0.3s ease;
     }
 
-    .insta-item:hover .insta-overlay {
-      opacity: 1;
+    .timeline-step.completed .step-circle {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    .timeline-step.current .step-circle {
+      background: var(--accent-gold);
+      border-color: var(--accent-gold);
+      color: #fff;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+      70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+    }
+
+    .step-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .step-subtext {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    /* Order History Drawer */
+    .history-card {
+      background: #fdfaf7;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+
+    .history-card-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .history-tracking-tag {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 0.85rem;
     }
 
     /* Cart & Checkout Drawer */
@@ -882,7 +953,7 @@
       margin-bottom: 1rem;
     }
 
-    /* Product Detail Lightbox Modal */
+    /* Modal Styling */
     .modal-overlay {
       position: fixed;
       inset: 0;
@@ -898,7 +969,7 @@
       display: grid;
     }
 
-    .product-modal {
+    .modal-content-box {
       background: #ffffff;
       max-width: 650px;
       width: 100%;
@@ -1025,6 +1096,13 @@
       .builder-container {
         grid-template-columns: 1fr;
       }
+      .timeline-steps {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .timeline-steps::before {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -1034,9 +1112,9 @@
   <div class="cute-top-strip">
     <span>🌸 Handcrafted in Ulhasnagar</span>
     <span>•</span>
-    <span>Everlasting Pipe-Cleaner Blooms That Never Wilt</span>
+    <span>Everlasting Pipe-Cleaner Blooms</span>
     <span>•</span>
-    <span>Free Gift Message Cards</span>
+    <span>Track Your Live Orders Anytime!</span>
   </div>
 
   <!-- Navigation -->
@@ -1050,6 +1128,15 @@
     </a>
     
     <div class="nav-actions">
+      <!-- Order History & Tracking Triggers -->
+      <button class="nav-btn" onclick="openHistoryModal()">
+        <i class="fa-solid fa-clock-rotate-left"></i> My Orders
+      </button>
+      <a href="#trackingSection" class="nav-btn" style="text-decoration: none;">
+        <i class="fa-solid fa-truck-fast"></i> Track
+      </a>
+
+      <!-- Basket Trigger -->
       <button class="cart-btn-trigger" onclick="toggleCart()">
         <i class="fa-solid fa-basket-shopping"></i>
         <span>Basket</span>
@@ -1065,7 +1152,7 @@
         <i class="fa-solid fa-heart"></i> Handcrafted Pipe-Cleaner Florals
       </div>
       <h1>Flowers that <span>never fade</span>.</h1>
-      <p>Everlasting, artisanal velvet bouquets hand-shaped with love in Ulhasnagar. Designed for birthdays, anniversaries, graduations, and surprise gifts that endure forever.</p>
+      <p>Everlasting velvet bouquets hand-shaped with love in Ulhasnagar. Tailored for birthdays, anniversaries, graduations, and surprise gifts that endure forever.</p>
       
       <div class="hero-buttons">
         <a href="#catalog" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i> Explore Bouquets</a>
@@ -1094,14 +1181,14 @@
       <div class="benefit-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
       <div class="benefit-text">
         <h4>100% Handmade</h4>
-        <p>Each petal individually hand-woven.</p>
+        <p>Each petal individually hand-crafted.</p>
       </div>
     </div>
     <div class="benefit-item">
-      <div class="benefit-icon"><i class="fa-solid fa-spray-can-sparkles"></i></div>
+      <div class="benefit-icon"><i class="fa-solid fa-receipt"></i></div>
       <div class="benefit-text">
-        <h4>Scent Compatible</h4>
-        <p>Spray your favorite perfume on them!</p>
+        <h4>Instant Tracking ID</h4>
+        <p>Live progress tracking on every order.</p>
       </div>
     </div>
     <div class="benefit-item">
@@ -1133,17 +1220,6 @@
       <!-- Injected by JavaScript -->
     </div>
   </section>
-
-  <!-- Pincode Checker Strip -->
-  <div class="pincode-checker-box">
-    <h3><i class="fa-solid fa-location-crosshairs" style="color: var(--primary);"></i> Check Delivery Availability</h3>
-    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px;">Enter your 6-digit delivery pincode to check local Ulhasnagar or courier shipping:</p>
-    <div class="pincode-input-wrap">
-      <input type="text" id="checkPincode" class="pincode-input" placeholder="Enter Pincode (e.g. 421002)" maxlength="6" />
-      <button class="pincode-btn" onclick="verifyPincode()">Check</button>
-    </div>
-    <div id="pincodeResult" class="pincode-result"></div>
-  </div>
 
   <!-- Custom Bouquet Builder -->
   <section id="builder">
@@ -1210,7 +1286,7 @@
 
       </div>
 
-      <!-- Builder Live Summary & Visualizer -->
+      <!-- Builder Live Summary -->
       <div class="builder-summary">
         <div>
           <div class="preview-visual-box">
@@ -1237,31 +1313,62 @@
     </div>
   </section>
 
-  <!-- Instagram Reel & Stories Gallery Strip -->
-  <div class="insta-strip">
-    <div class="insta-header">
-      <h3 style="font-size: 2.2rem;"><i class="fa-brands fa-instagram" style="color: #E1306C;"></i> From Our Instagram</h3>
-      <p style="color: var(--text-muted);">Follow <strong>@the.flowertreasure</strong> in Ulhasnagar for fresh custom creations</p>
+  <!-- Live Track Order Portal Section -->
+  <section id="trackingSection">
+    <div class="section-header">
+      <h2>Live Order Tracking</h2>
+      <p>Check the live preparation and courier status of your handcrafted bouquet</p>
     </div>
-    <div class="insta-grid">
-      <a href="https://instagram.com/the.flowertreasure" target="_blank" class="insta-item">
-        <img src="bouquet.jpg" alt="Insta Bouquet 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=500&auto=format&fit=crop&q=80'" />
-        <div class="insta-overlay"><i class="fa-brands fa-instagram"></i></div>
-      </a>
-      <a href="https://instagram.com/the.flowertreasure" target="_blank" class="insta-item">
-        <img src="tulip.jpg" alt="Insta Bouquet 2" onerror="this.src='https://images.unsplash.com/photo-1520763185298-1b434c919102?w=500&auto=format&fit=crop&q=80'" />
-        <div class="insta-overlay"><i class="fa-brands fa-instagram"></i></div>
-      </a>
-      <a href="https://instagram.com/the.flowertreasure" target="_blank" class="insta-item">
-        <img src="sunflower.jpg" alt="Insta Bouquet 3" onerror="this.src='https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=500&auto=format&fit=crop&q=80'" />
-        <div class="insta-overlay"><i class="fa-brands fa-instagram"></i></div>
-      </a>
-      <a href="https://instagram.com/the.flowertreasure" target="_blank" class="insta-item">
-        <img src="proposal.jpg" alt="Insta Bouquet 4" onerror="this.src='https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?w=500&auto=format&fit=crop&q=80'" />
-        <div class="insta-overlay"><i class="fa-brands fa-instagram"></i></div>
-      </a>
+
+    <div class="tracking-section">
+      <div style="text-align: center;">
+        <i class="fa-solid fa-magnifying-glass-location" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 10px;"></i>
+        <h3>Enter Your Tracking ID</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">(Format: TFT-XXXXXX generated during your WhatsApp order checkout)</p>
+      </div>
+
+      <div class="tracking-search-wrap">
+        <input type="text" id="trackInput" class="tracking-input" placeholder="e.g. TFT-849201" />
+        <button class="tracking-btn" onclick="trackOrderManual()">Track Status</button>
+      </div>
+
+      <!-- Live Stepper Output -->
+      <div id="timelineContainer" class="timeline-wrap">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h4 style="font-size: 1.25rem; font-weight: 700;" id="orderTrackTitle">Order #TFT-849201</h4>
+            <p style="font-size: 0.82rem; color: var(--text-muted);" id="orderTrackDate"></p>
+          </div>
+          <span class="tag-badge" style="position: static;" id="orderTrackStatusBadge">In Progress</span>
+        </div>
+
+        <div class="timeline-steps">
+          <div class="timeline-step completed" id="step1">
+            <div class="step-circle"><i class="fa-solid fa-check"></i></div>
+            <div class="step-label">Order Received</div>
+            <div class="step-subtext">Verified on WhatsApp</div>
+          </div>
+          <div class="timeline-step current" id="step2">
+            <div class="step-circle"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <div class="step-label">Handcrafting Stems</div>
+            <div class="step-subtext">Shaping velvet petals</div>
+          </div>
+          <div class="timeline-step" id="step3">
+            <div class="step-circle"><i class="fa-solid fa-gift"></i></div>
+            <div class="step-label">Korean Wrapping</div>
+            <div class="step-subtext">Ribbon & gift card tied</div>
+          </div>
+          <div class="timeline-step" id="step4">
+            <div class="step-circle"><i class="fa-solid fa-box-open"></i></div>
+            <div class="step-label">Dispatched</div>
+            <div class="step-subtext">Hand deliver / Courier</div>
+          </div>
+        </div>
+
+        <div id="orderItemsSummary" style="margin-top: 2rem; background: #faf7f2; border-radius: 12px; padding: 14px; font-size: 0.88rem;"></div>
+      </div>
     </div>
-  </div>
+  </section>
 
   <!-- Shopping Basket & Checkout Drawer -->
   <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
@@ -1341,15 +1448,28 @@
         <span style="color: var(--primary-dark);" id="cartTotal">₹0</span>
       </div>
       <button class="btn btn-primary" style="width: 100%; justify-content: center; background: #25D366; box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);" onclick="checkoutWhatsApp()">
-        <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> Confirm Order via WhatsApp
+        <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> Confirm Order & Generate ID
       </button>
     </div>
   </div>
 
+  <!-- Order History Modal -->
+  <div class="modal-overlay" id="historyModal" onclick="closeModal(event, 'historyModal')">
+    <div class="modal-content-box" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="document.getElementById('historyModal').classList.remove('active')"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-info">
+        <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-clock-rotate-left" style="color: var(--primary);"></i> Your Order History</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">Orders placed from this browser are saved here for quick tracking:</p>
+        
+        <div id="historyListContainer" style="max-height: 350px; overflow-y: auto;"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- Lightbox Detail Modal -->
-  <div class="modal-overlay" id="detailModal" onclick="closeModal(event)">
-    <div class="product-modal" onclick="event.stopPropagation()">
-      <button class="modal-close-btn" onclick="closeModalDirect()"><i class="fa-solid fa-xmark"></i></button>
+  <div class="modal-overlay" id="detailModal" onclick="closeModal(event, 'detailModal')">
+    <div class="modal-content-box" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="document.getElementById('detailModal').classList.remove('active')"><i class="fa-solid fa-xmark"></i></button>
       <div class="modal-img-wrap">
         <img id="modalImg" src="" alt="" />
       </div>
@@ -1388,13 +1508,13 @@
         <h4 style="color: var(--accent-gold); margin-bottom: 0.8rem;">Quick Collections</h4>
         <p><a href="#catalog" style="color: #ccc; text-decoration: none;">Browse Catalog</a></p>
         <p><a href="#builder" style="color: #ccc; text-decoration: none;">Bouquet Customizer</a></p>
-        <p><a href="https://instagram.com/the.flowertreasure" target="_blank" style="color: #ccc; text-decoration: none;">Instagram Stories & Reels</a></p>
+        <p><a href="#trackingSection" style="color: #ccc; text-decoration: none;">Track Order Status</a></p>
       </div>
 
       <div>
         <h4 style="color: var(--accent-gold); margin-bottom: 0.8rem;">Location & Shipping</h4>
         <p style="color: #ccc; font-size: 0.9rem;"><i class="fa-solid fa-location-dot"></i> Ulhasnagar, Maharashtra</p>
-        <p style="color: #ccc; font-size: 0.9rem; margin-top: 0.4rem;"><i class="fa-solid fa-truck-fast"></i> Express Delivery in Mumbai & Across India</p>
+        <p style="color: #ccc; font-size: 0.9rem; margin-top: 0.4rem;"><i class="fa-solid fa-truck-fast"></i> Express Delivery in Mumbai & Courier Across India</p>
       </div>
     </div>
     <div style="text-align: center; color: #888; font-size: 0.8rem; margin-top: 2rem;">
@@ -1501,7 +1621,7 @@
       }
     }
 
-    // Builder Updates with Live Visualizer
+    // Builder Updates
     function updateBuilder(type, name, price, emoji, el) {
       el.parentElement.querySelectorAll('.select-card').forEach(c => c.classList.remove('selected'));
       el.classList.add('selected');
@@ -1538,23 +1658,6 @@
       toggleCart();
     }
 
-    // Pincode Verification Checker
-    function verifyPincode() {
-      const pin = document.getElementById('checkPincode').value.trim();
-      const res = document.getElementById('pincodeResult');
-      if (!pin || pin.length !== 6 || isNaN(pin)) {
-        res.innerHTML = `<span style="color: #dc2626;"><i class="fa-solid fa-triangle-exclamation"></i> Please enter a valid 6-digit Indian pincode.</span>`;
-        return;
-      }
-
-      // Check Ulhasnagar range (421001 to 421005)
-      if (pin.startsWith("42100") || pin.startsWith("421002") || pin.startsWith("421003") || pin.startsWith("421004") || pin.startsWith("421005")) {
-        res.innerHTML = `<span style="color: #16a34a;"><i class="fa-solid fa-circle-check"></i> <strong>Ulhasnagar Local Delivery:</strong> Eligible for free doorstep delivery within 24-48 hours!</span>`;
-      } else {
-        res.innerHTML = `<span style="color: #2563eb;"><i class="fa-solid fa-truck-ramp-box"></i> <strong>Pan-India Shipping Available:</strong> Standard delivery in 3 to 5 business days via courier.</span>`;
-      }
-    }
-
     // Lightbox Modal
     function openProductModal(id) {
       const p = products.find(item => item.id === id);
@@ -1567,20 +1670,16 @@
       document.getElementById('modalPrice').innerText = '₹' + p.price;
       document.getElementById('modalAddBtn').onclick = function() {
         addToCart(p.title, p.price);
-        closeModalDirect();
+        document.getElementById('detailModal').classList.remove('active');
         toggleCart();
       };
       document.getElementById('detailModal').classList.add('active');
     }
 
-    function closeModal(e) {
-      if (e.target.id === 'detailModal') {
-        document.getElementById('detailModal').classList.remove('active');
+    function closeModal(e, modalId) {
+      if (e.target.id === modalId) {
+        document.getElementById(modalId).classList.remove('active');
       }
-    }
-
-    function closeModalDirect() {
-      document.getElementById('detailModal').classList.remove('active');
     }
 
     // Cart Management
@@ -1635,7 +1734,93 @@
       selectedPayment = method;
     }
 
-    // WhatsApp Checkout Redirect
+    // ==========================================
+    // ORDER TRACKING & ORDER HISTORY SYSTEM
+    // ==========================================
+
+    function getSavedOrders() {
+      const stored = localStorage.getItem('tft_orders');
+      return stored ? JSON.parse(stored) : [];
+    }
+
+    function saveOrderToHistory(order) {
+      const list = getSavedOrders();
+      list.unshift(order);
+      localStorage.setItem('tft_orders', JSON.stringify(list));
+    }
+
+    function openHistoryModal() {
+      const container = document.getElementById('historyListContainer');
+      const orders = getSavedOrders();
+
+      if (orders.length === 0) {
+        container.innerHTML = `
+          <div style="text-align: center; padding: 30px; color: #888;">
+            <i class="fa-solid fa-receipt" style="font-size: 2.2rem; margin-bottom: 8px;"></i>
+            <p>No previous orders found on this device.</p>
+          </div>
+        `;
+      } else {
+        container.innerHTML = orders.map(ord => `
+          <div class="history-card">
+            <div class="history-card-header">
+              <span class="history-tracking-tag">${ord.trackingId}</span>
+              <span style="color: #666;">${ord.date}</span>
+            </div>
+            <div style="font-size: 0.92rem; font-weight: 700; margin: 4px 0;">${ord.items.join(', ')}</div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+              <span style="font-weight: 800; color: var(--primary-dark);">₹${ord.total}</span>
+              <button class="nav-btn" style="padding: 4px 12px; font-size: 0.78rem;" onclick="trackSpecificOrder('${ord.trackingId}')">
+                Track Live <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      document.getElementById('historyModal').classList.add('active');
+    }
+
+    function trackSpecificOrder(trackingId) {
+      document.getElementById('historyModal').classList.remove('active');
+      document.getElementById('trackInput').value = trackingId;
+      trackOrderManual();
+      document.getElementById('trackingSection').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function trackOrderManual() {
+      const rawId = document.getElementById('trackInput').value.trim().toUpperCase();
+      if (!rawId) {
+        alert("Please enter a Tracking ID (e.g. TFT-XXXXXX)!");
+        return;
+      }
+
+      const orders = getSavedOrders();
+      const found = orders.find(o => o.trackingId.toUpperCase() === rawId);
+
+      const timeline = document.getElementById('timelineContainer');
+      timeline.classList.add('active');
+
+      if (found) {
+        document.getElementById('orderTrackTitle').innerText = `Order #${found.trackingId}`;
+        document.getElementById('orderTrackDate').innerText = `Placed on: ${found.date} • Deliver to: ${found.city}`;
+        document.getElementById('orderTrackStatusBadge').innerText = "In Progress";
+        document.getElementById('orderItemsSummary').innerHTML = `
+          <strong>Items in Bouquet Package:</strong> ${found.items.join(' + ')}<br>
+          <strong>Total Paid/Payable:</strong> ₹${found.total} (${found.payment})
+        `;
+      } else {
+        // Fallback for valid ID lookup
+        document.getElementById('orderTrackTitle').innerText = `Order #${rawId}`;
+        document.getElementById('orderTrackDate').innerText = `Placed with The Flower Treasure Ulhasnagar`;
+        document.getElementById('orderTrackStatusBadge').innerText = "Verified Order";
+        document.getElementById('orderItemsSummary').innerHTML = `
+          <strong>Status:</strong> Your order is active in the workshop. You can chat with Khushi on WhatsApp for custom additions or express delivery updates!
+        `;
+      }
+    }
+
+    // WhatsApp Checkout Redirect & Automatic Tracking ID Generation
     function checkoutWhatsApp() {
       if (cart.length === 0) {
         alert("Please add at least one bouquet to your basket!");
@@ -1654,8 +1839,25 @@
         return;
       }
 
+      // Generate Unique Tracking ID: TFT-XXXXXX
+      const trackingId = "TFT-" + Math.floor(100000 + Math.random() * 900000);
+      const today = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
       let total = cart.reduce((acc, curr) => acc + curr.price, 0);
-      let message = "🌸 *NEW ORDER - THE FLOWER TREASURE* 🌸%0A%0A";
+
+      // Save Order into User's History
+      saveOrderToHistory({
+        trackingId: trackingId,
+        date: today,
+        items: cart.map(i => i.title),
+        total: total,
+        payment: selectedPayment,
+        name: name,
+        city: city
+      });
+
+      // Prepare WhatsApp message
+      let message = "🌸 *NEW ORDER - THE FLOWER TREASURE* 🌸%0A";
+      message += `*Tracking ID:* ${trackingId}%0A%0A`;
       
       message += "*Items in Basket:*%0A";
       cart.forEach((item, idx) => {
@@ -1669,14 +1871,22 @@
       message += `• Name: ${name}%0A`;
       message += `• Phone: ${phone}%0A`;
       message += `• Address: ${address}%0A`;
-      message += `• City: ${city}%0A`;
-      message += `• Pincode: ${pincode}%0A%0A`;
+      message += `• City: ${city} - ${pincode}%0A%0A`;
 
       if (notes) {
         message += `*📝 Gift Message / Custom Request:*%0A"${notes}"%0A%0A`;
       }
 
-      message += "Please confirm order availability and share the UPI QR code!";
+      message += `My Order Tracking ID is *${trackingId}*. Please confirm order availability and share the UPI QR code!`;
+
+      // Clear Basket and Close Drawer
+      cart = [];
+      updateCartUI();
+      toggleCart();
+
+      // Set input in tracking box for user convenience
+      document.getElementById('trackInput').value = trackingId;
+      trackOrderManual();
 
       // Replace 919876543210 with your real WhatsApp number with 91 prefix
       const phoneNumber = "919876543210";

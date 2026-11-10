@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Flower Treasure | Handcrafted Pipe-Cleaner Bouquets</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #d9777f;
+      --primary-dark: #b8545d;
+      --primary-light: #fbebee;
+      --accent-gold: #d4af37;
+      --dark-paper: #1a1a1a;
+      --cream-bg: #faf7f2;
+      --card-bg: #ffffff;
+      --text-main: #2b2325;
+      --text-muted: #6b6366;
+      --border-color: #ede5de;
+      --radius: 16px;
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 20px 40px rgba(217, 119, 127, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--cream-bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-serif {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    /* Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(250, 247, 242, 0.95);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--primary-light);
+      border: 1px solid var(--primary);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      font-size: 1.25rem;
+    }
+
+    .brand-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-subtitle {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .cart-btn-trigger {
+      position: relative;
+      background: var(--dark-paper);
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+    }
+
+    .cart-btn-trigger:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .cart-badge {
+      background: var(--accent-gold);
+      color: #111;
+      font-size: 0.75rem;
+      font-weight: 800;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      display: grid;
+      place-items: center;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      padding: 4.5rem 5% 3.5rem;
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      font-size: 3.8rem;
+      line-height: 1.1;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+      font-style: italic;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      max-width: 520px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      padding: 13px 26px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(217, 119, 127, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background: #f5f2ed;
+      border-color: #d8cec3;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-color);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-img {
+      width: 100%;
+      height: 380px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #f7dcdb 0%, #ecd4be 50%, #1f1f1f 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .hero-card-badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(8px);
+      color: var(--accent-gold);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+    }
+
+    /* Section Styling */
+    section {
+      padding: 4rem 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* Catalog Grid */
+    .filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 8px 20px;
+      border-radius: 20px;
+      background: #fff;
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--dark-paper);
+      color: #fff;
+      border-color: var(--dark-paper);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .product-preview {
+      height: 250px;
+      background: #f4eee9;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .product-icon-wrap {
+      font-size: 4.5rem;
+      color: var(--primary);
+      opacity: 0.9;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover .product-icon-wrap {
+      transform: scale(1.1);
+    }
+
+    .tag-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--primary-dark);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+    }
+
+    .product-info {
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-title {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .product-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+      flex-grow: 1;
+    }
+
+    .product-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 0.8rem;
+      border-top: 1px solid #f2ece7;
+    }
+
+    .product-price {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .add-cart-btn {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border: 1px solid rgba(217, 119, 127, 0.3);
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .add-cart-btn:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* Custom Bouquet Builder */
+    .builder-container {
+      background: #ffffff;
+      border-radius: 24px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .builder-step {
+      margin-bottom: 1.8rem;
+    }
+
+    .builder-step h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .option-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+    }
+
+    .select-card {
+      border: 1.5px solid var(--border-color);
+      border-radius: 12px;
+      padding: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: #fff;
+    }
+
+    .select-card:hover {
+      border-color: var(--primary);
+    }
+
+    .select-card.selected {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    .builder-summary {
+      background: var(--cream-bg);
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+    }
+
+    .summary-total {
+      margin-top: 1.5rem;
+      padding-top: 1.2rem;
+      border-top: 2px dashed #dbd2c8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    /* Shopping Cart Drawer */
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .cart-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      max-width: 440px;
+      height: 100%;
+      background: #ffffff;
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+      z-index: 1001;
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-drawer.active {
+      transform: translateX(0);
+    }
+
+    .cart-header {
+      padding: 1.4rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .close-cart {
+      background: transparent;
+      border: none;
+      font-size: 1.25rem;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    .cart-items {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .cart-item {
+      display: flex;
+      gap: 14px;
+      padding: 12px;
+      background: #fcfbfa;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      align-items: center;
+    }
+
+    .cart-item-details {
+      flex-grow: 1;
+    }
+
+    .cart-item-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .cart-item-price {
+      font-size: 0.85rem;
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    .cart-footer {
+      padding: 1.5rem;
+      border-top: 1px solid var(--border-color);
+      background: #fdfbfa;
+    }
+
+    .cart-footer-total {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark-paper);
+      color: #fff;
+      padding: 3rem 5% 2rem;
+      margin-top: 5rem;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-brand h3 {
+      font-size: 1.8rem;
+      color: var(--accent-gold);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .social-links a:hover {
+      background: var(--primary);
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 2rem;
+      }
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+      .builder-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="#" class="brand-logo">
+      <div class="brand-icon"><i class="fa-solid fa-spa"></i></div>
+      <div>
+        <div class="brand-title">The Flower Treasure</div>
+        <div class="brand-subtitle">Handmade in Ulhasnagar</div>
+      </div>
+    </a>
+    
+    <div class="nav-actions">
+      <button class="cart-btn-trigger" onclick="toggleCart()">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <span>Cart</span>
+        <span class="cart-badge" id="cartCount">0</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-text">
+      <div class="hero-badge">
+        <i class="fa-solid fa-heart"></i> Handcrafted Pipe-Cleaner Florals
+      </div>
+      <h1>Flowers that <span>never fade</span>.</h1>
+      <p>Everlasting, artisanal velvet bouquets hand-shaped with love. Tailored for birthdays, anniversaries, graduations, and surprise gifts that endure forever.</p>
+      
+      <div class="hero-buttons">
+        <a href="#catalog" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i> Explore Bouquets</a>
+        <a href="#builder" class="btn btn-secondary"><i class="fa-solid fa-wand-magic-sparkles"></i> Build Custom</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-img">
+          <div class="hero-card-badge">Signature Velvet Series</div>
+          <i class="fa-solid fa-fan" style="font-size: 5rem; color: #fff; margin-bottom: 1rem;"></i>
+          <h3 style="font-size: 1.8rem;">Stargazer & Rose Bouquet</h3>
+          <p style="font-size: 0.95rem; opacity: 0.9;">Finished in Matte Black & Gold Fluted Wrap</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Bouquet Catalog Section -->
+  <section id="catalog">
+    <div class="section-header">
+      <h2>Handmade Collections</h2>
+      <p>Artisanal velvet stems that never wilt, dry, or lose their vibrancy</p>
+    </div>
+
+    <!-- Category Filter Tabs -->
+    <div class="filter-tabs">
+      <button class="filter-btn active" onclick="filterCategory('all', this)">All Creations</button>
+      <button class="filter-btn" onclick="filterCategory('roses', this)">Roses & Mixed</button>
+      <button class="filter-btn" onclick="filterCategory('tulips', this)">Tulip Sleeves</button>
+      <button class="filter-btn" onclick="filterCategory('sunflowers', this)">Sunflowers</button>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="product-grid" id="productGrid">
+      <!-- Injected by JavaScript -->
+    </div>
+  </section>
+
+  <!-- Custom Bouquet Builder -->
+  <section id="builder">
+    <div class="section-header">
+      <h2>Interactive Bouquet Builder</h2>
+      <p>Customize every petal, wrap, and satin ribbon to make a personalized keepsake</p>
+    </div>
+
+    <div class="builder-container">
+      <div class="builder-options">
+        
+        <!-- Step 1: Main Flower -->
+        <div class="builder-step">
+          <h4>1. Select Primary Flower</h4>
+          <div class="option-grid">
+            <div class="select-card selected" onclick="updateBuilder('flower', 'Blush Tulip', 299, this)">
+              <div>🌷 Blush Tulip</div>
+              <small>₹299</small>
+            </div>
+            <div class="select-card" onclick="updateBuilder('flower', 'Velvet Rose', 349, this)">
+              <div>🌹 Velvet Rose</div>
+              <small>₹349</small>
+            </div>
+            <div class="select-card" onclick="updateBuilder('flower', 'Pink Lily', 399, this)">
+              <div>🌸 Pink Lily</div>
+              <small>₹399</small>
+            </div>
+            <div class="select-card" onclick="updateBuilder('flower', 'Sunflower', 349, this)">
+              <div>🌻 Sunburst Sunflower</div>
+              <small>₹349</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Stem Count -->
+        <div class="builder-step">
+          <h4>2. Number of Stems</h4>
+          <div class="option-grid">
+            <div class="select-card selected" onclick="updateBuilder('count', 'Single Stem', 0, this)">Single Stem</div>
+            <div class="select-card" onclick="updateBuilder('count', 'Trio (3 Stems)', 350, this)">Trio (+₹350)</div>
+            <div class="select-card" onclick="updateBuilder('count', 'Grand Bunch (5 Stems)', 650, this)">Grand Bunch (+₹650)</div>
+          </div>
+        </div>
+
+        <!-- Step 3: Wrap Style -->
+        <div class="builder-step">
+          <h4>3. Korean Paper Wrapping</h4>
+          <div class="option-grid">
+            <div class="select-card selected" onclick="updateBuilder('wrap', 'Matte Black & Gold Edge', 50, this)">Black & Gold</div>
+            <div class="select-card" onclick="updateBuilder('wrap', 'Blush Pink Kraft', 50, this)">Blush Pink</div>
+            <div class="select-card" onclick="updateBuilder('wrap', 'Royal White & Gold', 50, this)">White & Gold</div>
+          </div>
+        </div>
+
+        <!-- Step 4: Add-on Topper -->
+        <div class="builder-step">
+          <h4>4. Special Add-ons</h4>
+          <div class="option-grid">
+            <div class="select-card selected" onclick="updateBuilder('addon', 'None', 0, this)">No Add-on</div>
+            <div class="select-card" onclick="updateBuilder('addon', 'Red Pipe Heart Topper', 70, this)">Red Heart (+₹70)</div>
+            <div class="select-card" onclick="updateBuilder('addon', 'Fairy LED Lights', 90, this)">Fairy Lights (+₹90)</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Builder Live Summary -->
+      <div class="builder-summary">
+        <div>
+          <h3 style="font-size: 1.8rem; margin-bottom: 1.2rem;">Custom Creation</h3>
+          <div class="summary-item"><span>Selected Flower:</span> <strong id="sumFlower">Blush Tulip</strong></div>
+          <div class="summary-item"><span>Arrangement:</span> <strong id="sumCount">Single Stem</strong></div>
+          <div class="summary-item"><span>Wrapping:</span> <strong id="sumWrap">Matte Black & Gold</strong></div>
+          <div class="summary-item"><span>Add-on Topper:</span> <strong id="sumAddon">None</strong></div>
+          
+          <div class="summary-total">
+            <span>Total Price:</span>
+            <span style="color: var(--primary-dark);" id="builderPrice">₹349</span>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1.5rem;" onclick="addCustomToCart()">
+          <i class="fa-solid fa-cart-plus"></i> Add Custom Bouquet to Cart
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shopping Cart Drawer -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3 style="font-size: 1.4rem;">Your Flower Basket</h3>
+      <button class="close-cart" onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="cart-items" id="cartItems">
+      <!-- Items dynamically added here -->
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-footer-total">
+        <span>Estimated Total:</span>
+        <span style="color: var(--primary-dark);" id="cartTotal">₹0</span>
+      </div>
+      <button class="btn btn-primary" style="width: 100%; justify-content: center; background: #25D366;" onclick="checkoutWhatsApp()">
+        <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> Order Directly on WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>The Flower Treasure</h3>
+        <p style="color: #bbb; max-width: 320px; font-size: 0.95rem; margin-top: 0.5rem;">
+          Everlasting pipe-cleaner floral artistry hand-made in Ulhasnagar. Designed to make special memories permanent.
+        </p>
+        <div class="social-links">
+          <a href="https://instagram.com/the.flowertreasure" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" onclick="checkoutWhatsApp()" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 style="color: var(--accent-gold); margin-bottom: 0.8rem;">Quick Links</h4>
+        <p><a href="#catalog" style="color: #ccc; text-decoration: none;">Browse Catalog</a></p>
+        <p><a href="#builder" style="color: #ccc; text-decoration: none;">Custom Arrangement</a></p>
+        <p><a href="https://instagram.com/the.flowertreasure" target="_blank" style="color: #ccc; text-decoration: none;">Instagram Gallery</a></p>
+      </div>
+
+      <div>
+        <h4 style="color: var(--accent-gold); margin-bottom: 0.8rem;">Location & Orders</h4>
+        <p style="color: #ccc; font-size: 0.9rem;"><i class="fa-solid fa-location-dot"></i> Ulhasnagar, Maharashtra</p>
+        <p style="color: #ccc; font-size: 0.9rem; margin-top: 0.4rem;"><i class="fa-solid fa-truck-fast"></i> Shipping Across India</p>
+      </div>
+    </div>
+    <div style="text-align: center; color: #888; font-size: 0.8rem; margin-top: 2rem;">
+      © 2026 The Flower Treasure. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- App Logic Script -->
+  <script>
+    // Products Database
+    const products = [
+      {
+        id: 1,
+        title: "Velvet Stargazer & Rose Bouquet",
+        category: "roses",
+        price: 799,
+        badge: "Bestseller",
+        icon: "fa-fan",
+        desc: "Handcrafted pink stargazer lily, plush red and pink roses, lush green leaves, and signature wire heart topper in fluted gold-trimmed black wrap."
+      },
+      {
+        id: 2,
+        title: "Blushing Tulip Solo Sleeve",
+        category: "tulips",
+        price: 299,
+        badge: "Popular Gift",
+        icon: "fa-spa",
+        desc: "Individual velvet pink tulip tucked into structured matte black and gold Korean paper, tied with a baby pink satin bow."
+      },
+      {
+        id: 3,
+        title: "Golden Sunburst Sunflower",
+        category: "sunflowers",
+        price: 499,
+        badge: "Summer Bloom",
+        icon: "fa-sun",
+        desc: "Vibrant yellow pipe-cleaner sunflower with a rich textured brown center and dual structured emerald leaves."
+      },
+      {
+        id: 4,
+        title: "Rose & Lily Proposal Bunch",
+        category: "roses",
+        price: 899,
+        badge: "Special Edition",
+        icon: "fa-heart",
+        desc: "Intricately woven crimson roses and twin lilies finished with a pearlescent white ribbon and keepsake heart emblem."
+      }
+    ];
+
+    let cart = [];
+
+    // Builder State
+    let builderState = {
+      flower: 'Blush Tulip',
+      flowerPrice: 299,
+      count: 'Single Stem',
+      countPrice: 0,
+      wrap: 'Matte Black & Gold Edge',
+      wrapPrice: 50,
+      addon: 'None',
+      addonPrice: 0
+    };
+
+    // Render Catalog
+    function renderProducts(items) {
+      const grid = document.getElementById('productGrid');
+      grid.innerHTML = items.map(p => `
+        <div class="product-card">
+          <div class="product-preview">
+            <span class="tag-badge">${p.badge}</span>
+            <div class="product-icon-wrap"><i class="fa-solid ${p.icon}"></i></div>
+          </div>
+          <div class="product-info">
+            <div class="product-title">${p.title}</div>
+            <div class="product-desc">${p.desc}</div>
+            <div class="product-bottom">
+              <div class="product-price">₹${p.price}</div>
+              <button class="add-cart-btn" onclick="addToCart('${p.title}', ${p.price})">
+                <i class="fa-solid fa-plus"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Filter Items
+    function filterCategory(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (cat === 'all') {
+        renderProducts(products);
+      } else {
+        renderProducts(products.filter(p => p.category === cat));
+      }
+    }
+
+    // Builder Updates
+    function updateBuilder(type, name, price, el) {
+      el.parentElement.querySelectorAll('.select-card').forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+
+      if (type === 'flower') {
+        builderState.flower = name;
+        builderState.flowerPrice = price;
+        document.getElementById('sumFlower').innerText = name;
+      } else if (type === 'count') {
+        builderState.count = name;
+        builderState.countPrice = price;
+        document.getElementById('sumCount').innerText = name;
+      } else if (type === 'wrap') {
+        builderState.wrap = name;
+        builderState.wrapPrice = price;
+        document.getElementById('sumWrap').innerText = name;
+      } else if (type === 'addon') {
+        builderState.addon = name;
+        builderState.addonPrice = price;
+        document.getElementById('sumAddon').innerText = name;
+      }
+
+      const total = builderState.flowerPrice + builderState.countPrice + builderState.wrapPrice + builderState.addonPrice;
+      document.getElementById('builderPrice').innerText = '₹' + total;
+    }
+
+    function addCustomToCart() {
+      const total = builderState.flowerPrice + builderState.countPrice + builderState.wrapPrice + builderState.addonPrice;
+      const title = `Custom Bouquet (${builderState.flower}, ${builderState.count}, ${builderState.addon})`;
+      addToCart(title, total);
+      toggleCart();
+    }
+
+    // Cart Management
+    function addToCart(title, price) {
+      cart.push({ title, price });
+      updateCartUI();
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      document.getElementById('cartCount').innerText = cart.length;
+      const itemsContainer = document.getElementById('cartItems');
+      const totalEl = document.getElementById('cartTotal');
+
+      if (cart.length === 0) {
+        itemsContainer.innerHTML = '<p style="text-align: center; color: #888; margin-top: 2rem;">Your flower basket is empty.</p>';
+        totalEl.innerText = '₹0';
+        return;
+      }
+
+      let sum = 0;
+      itemsContainer.innerHTML = cart.map((item, i) => {
+        sum += item.price;
+        return `
+          <div class="cart-item">
+            <div class="cart-item-details">
+              <div class="cart-item-name">${item.title}</div>
+              <div class="cart-item-price">₹${item.price}</div>
+            </div>
+            <button onclick="removeFromCart(${i})" style="background: none; border: none; color: #b8545d; cursor: pointer;">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </div>
+        `;
+      }).join('');
+
+      totalEl.innerText = '₹' + sum;
+    }
+
+    function toggleCart() {
+      document.getElementById('cartOverlay').classList.toggle('active');
+      document.getElementById('cartDrawer').classList.toggle('active');
+    }
+
+    // WhatsApp Checkout Redirect
+    function checkoutWhatsApp() {
+      if (cart.length === 0) {
+        alert("Please add at least one bouquet to your cart!");
+        return;
+      }
+
+      let total = cart.reduce((acc, curr) => acc + curr.price, 0);
+      let message = "Hi Khushi! I would like to order handcrafted pipe-cleaner bouquets from The Flower Treasure:%0A%0A";
+      
+      cart.forEach((item, idx) => {
+        message += `${idx + 1}. *${item.title}* - ₹${item.price}%0A`;
+      });
+
+      message += `%0A*Total Estimated:* ₹${total}%0A%0ACould you please share availability and delivery details to my pin code?`;
+
+      // Replace with your real WhatsApp number (keep 91 prefix, no '+' or spaces)
+      const phoneNumber = "919876543210";
+      window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+    }
+
+    // Initialize
+    renderProducts(products);
+  </script>
+</body>
+</html>

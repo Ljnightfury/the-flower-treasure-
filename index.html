@@ -521,7 +521,7 @@
     }
 
     /* ======================================================== */
-    /* INTERACTIVE ANIMATED CUSTOM BOUQUET CANVAS VISUALIZER */
+    /* REALISTIC VECTOR BOUQUET VISUALIZER (SMOOTH & BEAUTIFUL) */
     /* ======================================================== */
     .builder-container {
       background: #ffffff;
@@ -574,9 +574,8 @@
       color: var(--primary-dark);
     }
 
-    /* Live Studio Card */
     .visualizer-card {
-      background: linear-gradient(180deg, #fbf7f4 0%, #f4ece6 100%);
+      background: linear-gradient(180deg, #fcf9f7 0%, #f4ede7 100%);
       border-radius: 24px;
       border: 1.5px solid var(--border-color);
       padding: 1.8rem;
@@ -608,134 +607,142 @@
       100% { transform: scale(0.9); opacity: 0.8; }
     }
 
-    /* Visualizer Stage */
+    /* Realistic Visualizer Stage */
     .bouquet-stage {
-      height: 310px;
+      height: 330px;
       position: relative;
       display: flex;
       justify-content: center;
       align-items: flex-end;
       overflow: hidden;
       margin-bottom: 1.2rem;
-      border-radius: 18px;
-      background: radial-gradient(circle at 50% 60%, rgba(255,255,255,0.85) 0%, rgba(246,238,232,0.4) 100%);
+      border-radius: 20px;
+      background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f7f1ec 100%);
+      border: 1px solid rgba(217, 119, 127, 0.15);
     }
 
-    /* Stems & Flower Bunch Stage */
+    /* Flowers Arrangement Cluster */
     .blooms-cluster {
       position: absolute;
-      bottom: 100px;
+      bottom: 85px;
       display: flex;
       justify-content: center;
       align-items: center;
       z-index: 2;
-      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      width: 100%;
+      pointer-events: none;
     }
 
-    .bloom-stem {
+    .vector-stem {
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
-      position: relative;
-      animation: popBloom 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
-      transition: transform 0.3s ease;
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      animation: stemGrow 0.5s ease-out;
     }
 
-    @keyframes popBloom {
-      0% { transform: scale(0.2) translateY(30px); opacity: 0; }
-      100% { transform: scale(1) translateY(0); opacity: 1; }
+    @keyframes stemGrow {
+      0% { transform: translateY(40px) scale(0.4); opacity: 0; }
+      100% { transform: translateY(0) scale(1); opacity: 1; }
     }
 
-    .bloom-head {
-      font-size: 3.4rem;
-      line-height: 1;
-      filter: drop-shadow(0 6px 10px rgba(0,0,0,0.12));
-    }
-
-    .green-stem {
-      width: 6px;
-      height: 90px;
-      background: linear-gradient(180deg, #53945a 0%, #35633a 100%);
-      border-radius: 4px;
-      margin-top: -8px;
-    }
-
-    /* Korean Wrap Paper Styling */
+    /* Realistic Korean Wrapping Paper */
     .korean-wrap-paper {
       position: absolute;
-      bottom: -15px;
-      width: 175px;
-      height: 185px;
+      bottom: -10px;
+      width: 190px;
+      height: 180px;
       z-index: 4;
-      clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+      clip-path: polygon(14% 0%, 86% 0%, 100% 100%, 0% 100%);
       display: flex;
       justify-content: center;
       align-items: flex-end;
       padding-bottom: 12px;
-      box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+      box-shadow: 0 16px 30px rgba(0,0,0,0.2);
       transition: all 0.4s ease;
     }
 
     .wrap-black-gold {
-      background: linear-gradient(145deg, #181717 0%, #2a2727 100%);
-      border-top: 3.5px solid var(--accent-gold);
+      background: linear-gradient(135deg, #1c1a1a 0%, #2e2a2a 50%, #151414 100%);
+      border-top: 4px solid var(--accent-gold);
     }
 
     .wrap-blush-pink {
-      background: linear-gradient(145deg, #f7d6dc 0%, #eeadb9 100%);
-      border-top: 3px solid #ffffff;
+      background: linear-gradient(135deg, #fcdde2 0%, #f4b4bf 100%);
+      border-top: 4px solid #ffffff;
     }
 
     .wrap-white-gold {
-      background: linear-gradient(145deg, #ffffff 0%, #f6f3ee 100%);
-      border-top: 3.5px solid var(--accent-gold);
+      background: linear-gradient(135deg, #ffffff 0%, #f7f4ee 100%);
+      border-top: 4px solid var(--accent-gold);
     }
 
-    /* Satin Ribbon Bow */
-    .satin-bow {
-      width: 64px;
+    /* Realistic Satin Ribbon */
+    .satin-bow-realistic {
+      width: 72px;
       height: 28px;
-      background: #f7b4be;
-      border-radius: 14px;
+      background: linear-gradient(180deg, #fca5b1 0%, #e06d7e 100%);
+      border-radius: 16px;
       position: absolute;
-      bottom: 25px;
+      bottom: 24px;
       z-index: 6;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #fff;
-      font-size: 0.8rem;
     }
 
-    .satin-bow::after {
-      content: '🎀';
-      font-size: 1.4rem;
-      margin-top: -2px;
-    }
-
-    /* Add-on Heart Topper (Khushi's Signature Pipe Cleaner Heart) */
-    .wire-heart-addon {
+    .satin-bow-realistic::before, .satin-bow-realistic::after {
+      content: '';
       position: absolute;
-      top: 15px;
+      top: 10px;
+      width: 18px;
+      height: 34px;
+      background: linear-gradient(180deg, #fca5b1 0%, #e06d7e 100%);
+      border-radius: 0 0 8px 8px;
+    }
+
+    .satin-bow-realistic::before {
+      left: 12px;
+      transform: rotate(24deg);
+    }
+
+    .satin-bow-realistic::after {
+      right: 12px;
+      transform: rotate(-24deg);
+    }
+
+    .bow-center-knot {
+      width: 16px;
+      height: 16px;
+      background: #b84355;
+      border-radius: 50%;
+      z-index: 7;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+    }
+
+    /* Handcrafted Pipe Cleaner Red Heart Topper */
+    .pipe-cleaner-heart {
+      position: absolute;
+      top: 18px;
       right: 32%;
-      font-size: 2.2rem;
       z-index: 5;
       display: none;
-      animation: floatHeart 2.5s ease-in-out infinite alternate;
-      filter: drop-shadow(0 4px 8px rgba(184, 84, 93, 0.4));
+      filter: drop-shadow(0 6px 12px rgba(217, 38, 56, 0.4));
+      animation: gentleFloat 3s ease-in-out infinite alternate;
     }
 
-    .wire-heart-addon.active {
+    .pipe-cleaner-heart.active {
       display: block;
     }
 
-    @keyframes floatHeart {
-      0% { transform: translateY(0px) rotate(4deg); }
-      100% { transform: translateY(-8px) rotate(-4deg); }
+    @keyframes gentleFloat {
+      0% { transform: translateY(0px) rotate(-3deg); }
+      100% { transform: translateY(-10px) rotate(3deg); }
     }
 
-    /* Fairy Lights Glow Animation */
+    /* Fairy Lights Layer */
     .fairy-lights-layer {
       position: absolute;
       inset: 0;
@@ -748,22 +755,22 @@
       display: block;
     }
 
-    .sparkle-dot {
+    .fairy-glow-dot {
       position: absolute;
-      width: 7px;
-      height: 7px;
-      background: #fff6a8;
+      width: 9px;
+      height: 9px;
+      background: #fffbe6;
       border-radius: 50%;
-      box-shadow: 0 0 12px 4px #ffe600;
-      animation: lightTwinkle 1.4s infinite alternate;
+      box-shadow: 0 0 16px 5px #ffd700;
+      animation: warmBlink 1.4s infinite alternate ease-in-out;
     }
 
-    @keyframes lightTwinkle {
-      0% { opacity: 0.2; transform: scale(0.7); }
+    @keyframes warmBlink {
+      0% { opacity: 0.3; transform: scale(0.8); }
       100% { opacity: 1; transform: scale(1.3); }
     }
 
-    /* Visualizer Summary Details */
+    /* Summary Details */
     .summary-spec-list {
       background: #fff;
       border: 1px solid var(--border-color);
@@ -916,7 +923,7 @@
       color: var(--text-muted);
     }
 
-    /* Order History Drawer */
+    /* History Card */
     .history-card {
       background: #fdfaf7;
       border: 1px solid var(--border-color);
@@ -942,7 +949,7 @@
       font-size: 0.85rem;
     }
 
-    /* Cart & Checkout Drawer */
+    /* Cart Drawer */
     .cart-overlay {
       position: fixed;
       inset: 0;
@@ -1035,7 +1042,6 @@
       font-weight: 700;
     }
 
-    /* Checkout Card */
     .checkout-box {
       background: #faf7f2;
       border: 1px solid var(--border-color);
@@ -1085,6 +1091,7 @@
       gap: 8px;
     }
 
+    /* Live Payment Picker Cards */
     .payment-options {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1094,19 +1101,29 @@
     .payment-option-card {
       border: 1.5px solid var(--border-color);
       border-radius: 10px;
-      padding: 8px;
+      padding: 10px 8px;
       text-align: center;
       cursor: pointer;
       background: #ffffff;
       font-size: 0.82rem;
-      font-weight: 600;
+      font-weight: 700;
       transition: all 0.2s ease;
     }
 
     .payment-option-card.selected {
-      border-color: var(--primary);
-      background: var(--primary-light);
-      color: var(--primary-dark);
+      border-color: #25D366;
+      background: #f2fbf5;
+      color: #128C7E;
+    }
+
+    .upi-info-card {
+      margin-top: 10px;
+      background: #ffffff;
+      border: 1px dashed #25D366;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 0.8rem;
+      text-align: center;
     }
 
     .cart-footer {
@@ -1284,7 +1301,7 @@
     <span>•</span>
     <span>Everlasting Pipe-Cleaner Blooms</span>
     <span>•</span>
-    <span>Track Your Live Orders Anytime!</span>
+    <span>UPI / GPay: +91 88881 60377</span>
   </div>
 
   <!-- Navigation -->
@@ -1391,11 +1408,11 @@
     </div>
   </section>
 
-  <!-- Custom Bouquet Builder with Live Visualizer Canvas -->
+  <!-- Custom Bouquet Builder with Realistic Vector Visualizer -->
   <section id="builder">
     <div class="section-header">
       <h2>Interactive Bouquet Builder</h2>
-      <p>Watch your handcrafted arrangement come to life in real-time as you customize</p>
+      <p>Watch your handcrafted arrangement come to life with realistic pipe-cleaner petals</p>
     </div>
 
     <div class="builder-container">
@@ -1407,19 +1424,19 @@
         <div class="builder-step">
           <h4>1. Select Primary Flower</h4>
           <div class="option-grid">
-            <div class="select-card selected" onclick="updateBuilder('flower', 'Blush Tulip', 299, '🌷', this)">
+            <div class="select-card selected" onclick="updateBuilder('flower', 'Blush Tulip', 299, 'tulip', this)">
               <div>🌷 Blush Tulip</div>
               <small>₹299</small>
             </div>
-            <div class="select-card" onclick="updateBuilder('flower', 'Velvet Rose', 349, '🌹', this)">
+            <div class="select-card" onclick="updateBuilder('flower', 'Velvet Rose', 349, 'rose', this)">
               <div>🌹 Velvet Rose</div>
               <small>₹349</small>
             </div>
-            <div class="select-card" onclick="updateBuilder('flower', 'Pink Lily', 399, '🌸', this)">
+            <div class="select-card" onclick="updateBuilder('flower', 'Pink Lily', 399, 'lily', this)">
               <div>🌸 Pink Lily</div>
               <small>₹399</small>
             </div>
-            <div class="select-card" onclick="updateBuilder('flower', 'Sunflower', 349, '🌻', this)">
+            <div class="select-card" onclick="updateBuilder('flower', 'Sunflower', 349, 'sunflower', this)">
               <div>🌻 Sunburst Sunflower</div>
               <small>₹349</small>
             </div>
@@ -1465,29 +1482,37 @@
           <span style="font-size: 0.75rem; color: var(--text-muted);"><i class="fa-solid fa-sparkles"></i> Handcrafted Scale</span>
         </div>
 
-        <!-- The Animated Bouquet Visualizer Stage -->
+        <!-- The Realistic Vector Bouquet Stage -->
         <div class="bouquet-stage">
           
-          <!-- Chenille Pipe Heart Topper Add-on -->
-          <div class="wire-heart-addon" id="addonHeart">❤️</div>
+          <!-- Realistic Chenille Pipe Heart Topper Add-on[span_0](start_span)[span_0](end_span)[span_1](start_span)[span_1](end_span) -->
+          <div class="pipe-cleaner-heart" id="addonHeart">
+            <svg width="60" height="60" viewBox="0 0 100 100">
+              <path d="M50,85 C20,55 5,35 15,18 C25,2 45,10 50,28 C55,10 75,2 85,18 C95,35 80,55 50,85 Z" fill="none" stroke="#d91b35" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M50,85 C20,55 5,35 15,18 C25,2 45,10 50,28 C55,10 75,2 85,18 C95,35 80,55 50,85 Z" fill="none" stroke="#ff4d64" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
 
-          <!-- Twinkling Fairy Lights -->
+          <!-- Twinkling Warm Fairy Lights -->
           <div class="fairy-lights-layer" id="fairyLightsLayer">
-            <div class="sparkle-dot" style="top: 40px; left: 35%;"></div>
-            <div class="sparkle-dot" style="top: 75px; right: 30%; animation-delay: 0.3s;"></div>
-            <div class="sparkle-dot" style="top: 110px; left: 45%; animation-delay: 0.7s;"></div>
-            <div class="sparkle-dot" style="top: 60px; left: 55%; animation-delay: 1.1s;"></div>
+            <div class="fairy-glow-dot" style="top: 50px; left: 32%;"></div>
+            <div class="fairy-glow-dot" style="top: 85px; right: 28%; animation-delay: 0.3s;"></div>
+            <div class="fairy-glow-dot" style="top: 130px; left: 42%; animation-delay: 0.7s;"></div>
+            <div class="fairy-glow-dot" style="top: 70px; left: 56%; animation-delay: 1.1s;"></div>
+            <div class="fairy-glow-dot" style="top: 110px; right: 38%; animation-delay: 0.5s;"></div>
           </div>
 
-          <!-- Animated Blooms & Stems Cluster -->
+          <!-- Stems & Flower Bunch Stage -->
           <div class="blooms-cluster" id="bloomsCluster">
-            <!-- Stems injected via JS -->
+            <!-- Dynamically populated vector flowers -->
           </div>
 
-          <!-- Korean Fluted Wrapping Paper Outer Sleeve -->
+          <!-- Realistic Korean Paper Sleeve -->
           <div class="korean-wrap-paper wrap-black-gold" id="koreanWrapSleeve">
-            <!-- Satin Bow Ornament -->
-            <div class="satin-bow"></div>
+            <!-- Realistic Satin Ribbon Bow -->
+            <div class="satin-bow-realistic">
+              <div class="bow-center-knot"></div>
+            </div>
           </div>
 
         </div>
@@ -1596,7 +1621,7 @@
 
         <div class="form-group">
           <label>WhatsApp Phone Number *</label>
-          <input type="tel" id="custPhone" class="form-input" placeholder="e.g. 9876543210" />
+          <input type="tel" id="custPhone" class="form-input" placeholder="e.g. 8888160377" />
         </div>
 
         <div class="form-group">
@@ -1629,14 +1654,25 @@
       <div class="checkout-box">
         <h4><i class="fa-solid fa-credit-card" style="color: var(--primary);"></i> Payment Preference</h4>
         <div class="payment-options">
-          <div class="payment-option-card selected" onclick="selectPayment('UPI / QR Scan (GPay, PhonePe, Paytm)', this)">
-            <i class="fa-solid fa-qrcode" style="font-size: 1.1rem; display:block; margin-bottom:3px;"></i>
-            UPI / QR Scan
+          <div class="payment-option-card selected" onclick="selectPayment('UPI / QR Scan (8888160377)', this)">
+            <i class="fa-solid fa-qrcode" style="font-size: 1.2rem; display:block; margin-bottom:4px; color: #16a34a;"></i>
+            UPI / GPay / QR
           </div>
           <div class="payment-option-card" onclick="selectPayment('Cash on Delivery / Direct Confirmation', this)">
-            <i class="fa-solid fa-handshake" style="font-size: 1.1rem; display:block; margin-bottom:3px;"></i>
+            <i class="fa-solid fa-handshake" style="font-size: 1.2rem; display:block; margin-bottom:4px; color: var(--primary);"></i>
             Chat Confirm
           </div>
+        </div>
+
+        <!-- Live Payment Helper Box -->
+        <div class="upi-info-card" id="upiInfoCard">
+          <div style="font-weight: 700; color: #15803d; margin-bottom: 2px;">
+            <i class="fa-solid fa-circle-check"></i> Direct UPI & Scanner Active
+          </div>
+          <div>UPI Number: <strong>8888160377</strong></div>
+          <button type="button" onclick="copyUPI()" style="background: none; border: 1px solid #16a34a; color: #16a34a; font-size: 0.75rem; border-radius: 4px; padding: 2px 8px; margin-top: 5px; cursor: pointer;">
+            <i class="fa-solid fa-copy"></i> Copy UPI Number
+          </button>
         </div>
       </div>
     </div>
@@ -1648,7 +1684,7 @@
         <span style="color: var(--primary-dark);" id="cartTotal">₹0</span>
       </div>
       <button class="btn btn-primary" style="width: 100%; justify-content: center; background: #25D366; box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);" onclick="checkoutWhatsApp()">
-        <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> Confirm Order & Generate ID
+        <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> Confirm Order & Pay
       </button>
     </div>
   </div>
@@ -1686,7 +1722,7 @@
   </div>
 
   <!-- Floating WhatsApp Quick Button -->
-  <a href="https://wa.me/919876543210?text=Hi%20Khushi!%20I%20have%20an%20inquiry%20about%20your%20handcrafted%20flower%20bouquets%20at%20The%20Flower%20Treasure." target="_blank" class="floating-wa-btn" title="Chat with us on WhatsApp">
+  <a href="https://wa.me/918888160377?text=Hi%20Khushi!%20I%20have%20an%20inquiry%20about%20your%20handcrafted%20flower%20bouquets%20at%20The%20Flower%20Treasure." target="_blank" class="floating-wa-btn" title="Chat with us on WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
@@ -1700,7 +1736,7 @@
         </p>
         <div class="social-links">
           <a href="https://instagram.com/the.flowertreasure" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" onclick="checkoutWhatsApp()" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://wa.me/918888160377" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
       </div>
 
@@ -1714,6 +1750,7 @@
       <div>
         <h4 style="color: var(--accent-gold); margin-bottom: 0.8rem;">Location & Shipping</h4>
         <p style="color: #ccc; font-size: 0.9rem;"><i class="fa-solid fa-location-dot"></i> Ulhasnagar, Maharashtra[span_3](start_span)[span_3](end_span)</p>
+        <p style="color: #ccc; font-size: 0.9rem; margin-top: 0.4rem;"><i class="fa-solid fa-phone"></i> +91 88881 60377</p>
         <p style="color: #ccc; font-size: 0.9rem; margin-top: 0.4rem;"><i class="fa-solid fa-truck-fast"></i> Express Delivery in Mumbai & Courier Across India</p>
       </div>
     </div>
@@ -1724,7 +1761,6 @@
 
   <!-- App Logic Script -->
   <script>
-    // Products Database
     const products = [
       {
         id: 1,
@@ -1769,13 +1805,68 @@
     ];
 
     let cart = [];
-    let selectedPayment = 'UPI / QR Scan (GPay, PhonePe, Paytm)';
+    let selectedPayment = 'UPI / QR Scan (8888160377)';
 
-    // Builder Visualizer State
+    // Realistic Vector Flower SVG Generators (High-Fidelity Pipe-Cleaner Look)
+    const flowerSvgs = {
+      tulip: `
+        <svg width="74" height="150" viewBox="0 0 100 190">
+          <path d="M50,85 Q50,140 50,190" stroke="#48814d" stroke-width="7" stroke-linecap="round"/>
+          <path d="M50,130 Q30,105 20,118 Q35,140 50,145" fill="#589d5f"/>
+          <path d="M50,120 Q70,95 80,108 Q65,130 50,135" fill="#589d5f"/>
+          <path d="M25,75 C20,35 45,20 50,45 C55,20 80,35 75,75 C70,95 30,95 25,75 Z" fill="#e88295"/>
+          <path d="M38,72 C32,45 48,32 50,55 C52,32 68,45 62,72 C58,85 42,85 38,72 Z" fill="#fca5b5"/>
+          <path d="M46,65 C44,52 48,45 50,52 C52,45 56,52 54,65 Z" fill="#ffd1da"/>
+        </svg>
+      `,
+      rose: `
+        <svg width="80" height="150" viewBox="0 0 100 190">
+          <path d="M50,85 Q50,140 50,190" stroke="#48814d" stroke-width="7" stroke-linecap="round"/>
+          <path d="M50,125 Q20,110 30,130 Q45,135 50,140" fill="#589d5f"/>
+          <path d="M50,115 Q80,100 70,120 Q55,125 50,130" fill="#589d5f"/>
+          <circle cx="50" cy="55" r="32" fill="#c02138"/>
+          <path d="M35,45 C40,30 60,30 65,45 C70,60 30,60 35,45 Z" fill="#e0314b"/>
+          <path d="M42,50 C45,40 55,40 58,50 C60,60 40,60 42,50 Z" fill="#ff526c"/>
+          <circle cx="50" cy="52" r="7" fill="#8f1022"/>
+        </svg>
+      `,
+      lily: `
+        <svg width="86" height="150" viewBox="0 0 100 190">
+          <path d="M50,85 Q50,140 50,190" stroke="#48814d" stroke-width="7" stroke-linecap="round"/>
+          <path d="M50,130 Q25,115 28,135 Q42,140 50,145" fill="#589d5f"/>
+          <!-- 6 Stargazer Petals -->
+          <path d="M50,55 Q50,10 50,5 Q55,30 50,55" fill="#e57399" stroke="#b03060" stroke-width="2"/>
+          <path d="M50,55 Q15,30 10,25 Q30,45 50,55" fill="#f08da5" stroke="#b03060" stroke-width="2"/>
+          <path d="M50,55 Q85,30 90,25 Q70,45 50,55" fill="#f08da5" stroke="#b03060" stroke-width="2"/>
+          <path d="M50,55 Q18,75 12,85 Q35,70 50,55" fill="#e57399" stroke="#b03060" stroke-width="2"/>
+          <path d="M50,55 Q82,75 88,85 Q65,70 50,55" fill="#e57399" stroke="#b03060" stroke-width="2"/>
+          <circle cx="50" cy="55" r="6" fill="#fff8db"/>
+        </svg>
+      `,
+      sunflower: `
+        <svg width="86" height="150" viewBox="0 0 100 190">
+          <path d="M50,85 Q50,140 50,190" stroke="#48814d" stroke-width="7" stroke-linecap="round"/>
+          <path d="M50,130 Q22,110 25,135 Q40,140 50,145" fill="#589d5f"/>
+          <g fill="#fab818" stroke="#d49208" stroke-width="1.5">
+            <ellipse cx="50" cy="28" rx="8" ry="18" />
+            <ellipse cx="50" cy="78" rx="8" ry="18" />
+            <ellipse cx="25" cy="53" rx="18" ry="8" />
+            <ellipse cx="75" cy="53" rx="18" ry="8" />
+            <ellipse cx="32" cy="35" rx="9" ry="18" transform="rotate(-45 32 35)" />
+            <ellipse cx="68" cy="35" rx="9" ry="18" transform="rotate(45 68 35)" />
+            <ellipse cx="32" cy="71" rx="9" ry="18" transform="rotate(45 32 71)" />
+            <ellipse cx="68" cy="71" rx="9" ry="18" transform="rotate(-45 68 71)" />
+          </g>
+          <circle cx="50" cy="53" r="17" fill="#5c3818" stroke="#3b210a" stroke-width="2"/>
+          <circle cx="50" cy="53" r="12" fill="#75471f"/>
+        </svg>
+      `
+    };
+
     let builderState = {
       flower: 'Blush Tulip',
       flowerPrice: 299,
-      emoji: '🌷',
+      flowerType: 'tulip',
       count: 'Single Stem',
       countNum: 1,
       countPrice: 0,
@@ -1787,7 +1878,6 @@
       addonPrice: 0
     };
 
-    // Render Catalog
     function renderProducts(items) {
       const grid = document.getElementById('productGrid');
       grid.innerHTML = items.map(p => `
@@ -1813,7 +1903,6 @@
       `).join('');
     }
 
-    // Filter Items
     function filterCategory(cat, btn) {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
@@ -1824,17 +1913,15 @@
       }
     }
 
-    // ========================================================
-    // BUILDER STATE UPDATES & ANIMATED VISUALIZER ENGINE
-    // ========================================================
-    function updateBuilder(type, name, price, emoji, el, extra) {
+    // Builder Visualizer Engine
+    function updateBuilder(type, name, price, flowerType, el, extra) {
       el.parentElement.querySelectorAll('.select-card').forEach(c => c.classList.remove('selected'));
       el.classList.add('selected');
 
       if (type === 'flower') {
         builderState.flower = name;
         builderState.flowerPrice = price;
-        builderState.emoji = emoji;
+        builderState.flowerType = flowerType;
         document.getElementById('sumFlower').innerText = name;
       } else if (type === 'count') {
         builderState.count = name;
@@ -1853,11 +1940,9 @@
         document.getElementById('sumAddon').innerText = name;
       }
 
-      // Calculate Total
       const total = builderState.flowerPrice + builderState.countPrice + builderState.wrapPrice + builderState.addonPrice;
       document.getElementById('builderPrice').innerText = '₹' + total;
 
-      // Update The Animated Bouquet Stage
       renderBouquetStage();
     }
 
@@ -1866,64 +1951,53 @@
       const wrapSleeve = document.getElementById('koreanWrapSleeve');
       const heartAddon = document.getElementById('addonHeart');
       const lightsLayer = document.getElementById('fairyLightsLayer');
+      const svg = flowerSvgs[builderState.flowerType] || flowerSvgs.tulip;
 
-      // 1. Render Blooming Stems based on count
       let stemsHTML = '';
       const count = builderState.countNum;
       
       if (count === 1) {
         stemsHTML = `
-          <div class="bloom-stem" style="transform: scale(1);">
-            <div class="bloom-head">${builderState.emoji}</div>
-            <div class="green-stem"></div>
+          <div class="vector-stem" style="transform: scale(1.05);">
+            ${svg}
           </div>
         `;
       } else if (count === 3) {
         stemsHTML = `
-          <div class="bloom-stem" style="transform: rotate(-14deg) translateY(10px) scale(0.9);">
-            <div class="bloom-head">${builderState.emoji}</div>
-            <div class="green-stem"></div>
+          <div class="vector-stem" style="transform: rotate(-15deg) translateY(12px) scale(0.92); margin-right: -25px;">
+            ${svg}
           </div>
-          <div class="bloom-stem" style="transform: scale(1.05) translateY(-8px); z-index: 3;">
-            <div class="bloom-head">${builderState.emoji}</div>
-            <div class="green-stem"></div>
+          <div class="vector-stem" style="transform: scale(1.08) translateY(-10px); z-index: 3;">
+            ${svg}
           </div>
-          <div class="bloom-stem" style="transform: rotate(14deg) translateY(10px) scale(0.9);">
-            <div class="bloom-head">${builderState.emoji}</div>
-            <div class="green-stem"></div>
+          <div class="vector-stem" style="transform: rotate(15deg) translateY(12px) scale(0.92); margin-left: -25px;">
+            ${svg}
           </div>
         `;
       } else {
         // 5 Stems Grand Bunch
         stemsHTML = `
-          <div class="bloom-stem" style="transform: rotate(-22deg) translateY(18px) scale(0.85);">
-            <div class="bloom-head">${builderState.emoji}</div>
-            <div class="green-stem"></div>
+          <div class="vector-stem" style="transform: rotate(-24deg) translateY(20px) scale(0.85); margin-right: -30px;">
+            ${svg}
           </div>
-          <div class="bloom-stem" style="transform: rotate(-10deg) translateY(4px) scale(0.95); z-index: 2;">
-            <div class="bloom-head">${builderState.emoji}</div>
-            <div class="green-stem"></div>
+          <div class="vector-stem" style="transform: rotate(-10deg) translateY(4px) scale(0.96); z-index: 2; margin-right: -20px;">
+            ${svg}
           </div>
-          <div class="bloom-stem" style="transform: scale(1.1) translateY(-14px); z-index: 4;">
-            <div class="bloom-head">${builderState.emoji}</div>
-            <div class="green-stem"></div>
+          <div class="vector-stem" style="transform: scale(1.12) translateY(-16px); z-index: 4;">
+            ${svg}
           </div>
-          <div class="bloom-stem" style="transform: rotate(10deg) translateY(4px) scale(0.95); z-index: 2;">
-            <div class="bloom-head">${builderState.emoji}</div>
-            <div class="green-stem"></div>
+          <div class="vector-stem" style="transform: rotate(10deg) translateY(4px) scale(0.96); z-index: 2; margin-left: -20px;">
+            ${svg}
           </div>
-          <div class="bloom-stem" style="transform: rotate(22deg) translateY(18px) scale(0.85);">
-            <div class="bloom-head">${builderState.emoji}</div>
-            <div class="green-stem"></div>
+          <div class="vector-stem" style="transform: rotate(24deg) translateY(20px) scale(0.85); margin-left: -30px;">
+            ${svg}
           </div>
         `;
       }
       cluster.innerHTML = stemsHTML;
 
-      // 2. Update Wrapping Paper Classes
       wrapSleeve.className = 'korean-wrap-paper ' + builderState.wrapClass;
 
-      // 3. Update Add-ons
       if (builderState.addonType === 'heart') {
         heartAddon.classList.add('active');
         lightsLayer.classList.remove('active');
@@ -1943,7 +2017,6 @@
       toggleCart();
     }
 
-    // Lightbox Modal
     function openProductModal(id) {
       const p = products.find(item => item.id === id);
       if (!p) return;
@@ -2017,11 +2090,21 @@
       document.querySelectorAll('.payment-option-card').forEach(c => c.classList.remove('selected'));
       el.classList.add('selected');
       selectedPayment = method;
+
+      const upiCard = document.getElementById('upiInfoCard');
+      if (method.includes('UPI')) {
+        upiCard.style.display = 'block';
+      } else {
+        upiCard.style.display = 'none';
+      }
     }
 
-    // ==========================================
-    // ORDER TRACKING & ORDER HISTORY SYSTEM
-    // ==========================================
+    function copyUPI() {
+      navigator.clipboard.writeText("8888160377");
+      alert("UPI Number (8888160377) copied to clipboard!");
+    }
+
+    // Order Tracking & Storage
     function getSavedOrders() {
       const stored = localStorage.getItem('tft_orders');
       return stored ? JSON.parse(stored) : [];
@@ -2095,7 +2178,7 @@
         `;
       } else {
         document.getElementById('orderTrackTitle').innerText = `Order #${rawId}`;
-        document.getElementById('orderTrackDate').innerText = `Placed with The Flower Treasure Ulhasnagar`;
+        document.getElementById('orderTrackDate').innerText = `Placed with The Flower Treasure Ulhasnagar[span_4](start_span)[span_4](end_span)`;
         document.getElementById('orderTrackStatusBadge').innerText = "Verified Order";
         document.getElementById('orderItemsSummary').innerHTML = `
           <strong>Status:</strong> Your order is active in our workshop. Chat with Khushi on WhatsApp for custom additions or express delivery updates!
@@ -2103,7 +2186,7 @@
       }
     }
 
-    // WhatsApp Checkout Redirect & Automatic Tracking ID Generation
+    // Checkout & Order Generation directly to +91 88881 60377
     function checkoutWhatsApp() {
       if (cart.length === 0) {
         alert("Please add at least one bouquet to your basket!");
@@ -2122,12 +2205,10 @@
         return;
       }
 
-      // Generate Unique Tracking ID: TFT-XXXXXX
       const trackingId = "TFT-" + Math.floor(100000 + Math.random() * 900000);
       const today = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
       let total = cart.reduce((acc, curr) => acc + curr.price, 0);
 
-      // Save Order into User's History
       saveOrderToHistory({
         trackingId: trackingId,
         date: today,
@@ -2138,7 +2219,6 @@
         city: city
       });
 
-      // Prepare WhatsApp message
       let message = "🌸 *NEW ORDER - THE FLOWER TREASURE* 🌸%0A";
       message += `*Tracking ID:* ${trackingId}%0A%0A`;
       
@@ -2162,21 +2242,17 @@
 
       message += `My Order Tracking ID is *${trackingId}*. Please confirm order availability and share the UPI QR code!`;
 
-      // Reset Basket and Close Drawer
       cart = [];
       updateCartUI();
       toggleCart();
 
-      // Update input in tracking box for instant access
       document.getElementById('trackInput').value = trackingId;
       trackOrderManual();
 
-      // Replace 919876543210 with real 10-digit WhatsApp number (with 91 prefix)
-      const phoneNumber = "919876543210";
+      const phoneNumber = "918888160377";
       window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
     }
 
-    // Initialize Page & Visualizer Canvas
     renderProducts(products);
     renderBouquetStage();
   </script>

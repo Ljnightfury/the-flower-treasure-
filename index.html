@@ -520,9 +520,7 @@
       color: #fff;
     }
 
-    /* ======================================================== */
-    /* REALISTIC VECTOR BOUQUET VISUALIZER (SMOOTH & BEAUTIFUL) */
-    /* ======================================================== */
+    /* Realistic Bouquet Builder */
     .builder-container {
       background: #ffffff;
       border-radius: 26px;
@@ -607,7 +605,6 @@
       100% { transform: scale(0.9); opacity: 0.8; }
     }
 
-    /* Realistic Visualizer Stage */
     .bouquet-stage {
       height: 330px;
       position: relative;
@@ -621,7 +618,6 @@
       border: 1px solid rgba(217, 119, 127, 0.15);
     }
 
-    /* Flowers Arrangement Cluster */
     .blooms-cluster {
       position: absolute;
       bottom: 85px;
@@ -647,7 +643,6 @@
       100% { transform: translateY(0) scale(1); opacity: 1; }
     }
 
-    /* Realistic Korean Wrapping Paper */
     .korean-wrap-paper {
       position: absolute;
       bottom: -10px;
@@ -678,7 +673,6 @@
       border-top: 4px solid var(--accent-gold);
     }
 
-    /* Realistic Satin Ribbon */
     .satin-bow-realistic {
       width: 72px;
       height: 28px;
@@ -722,7 +716,6 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.25);
     }
 
-    /* Handcrafted Pipe Cleaner Red Heart Topper */
     .pipe-cleaner-heart {
       position: absolute;
       top: 18px;
@@ -742,7 +735,6 @@
       100% { transform: translateY(-10px) rotate(3deg); }
     }
 
-    /* Fairy Lights Layer */
     .fairy-lights-layer {
       position: absolute;
       inset: 0;
@@ -770,7 +762,6 @@
       100% { opacity: 1; transform: scale(1.3); }
     }
 
-    /* Summary Details */
     .summary-spec-list {
       background: #fff;
       border: 1px solid var(--border-color);
@@ -843,7 +834,6 @@
       background: var(--primary-dark);
     }
 
-    /* Timeline Stepper */
     .timeline-wrap {
       display: none;
       margin-top: 2rem;
@@ -1091,7 +1081,6 @@
       gap: 8px;
     }
 
-    /* Live Payment Picker Cards */
     .payment-options {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1140,7 +1129,7 @@
       margin-bottom: 1rem;
     }
 
-    /* Modal Styling */
+    /* Modal Generic */
     .modal-overlay {
       position: fixed;
       inset: 0;
@@ -1202,6 +1191,128 @@
 
     .modal-info {
       padding: 1.8rem;
+    }
+
+    /* ======================================================== */
+    /* OFFICIAL DIGITAL INVOICE / CASH MEMO STYLING */
+    /* ======================================================== */
+    .invoice-card {
+      background: #ffffff;
+      max-width: 680px;
+      width: 100%;
+      border-radius: 18px;
+      padding: 2.2rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-color);
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .invoice-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px dashed #ede5de;
+      padding-bottom: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .invoice-brand h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      line-height: 1.1;
+    }
+
+    .invoice-brand p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .invoice-meta {
+      text-align: right;
+    }
+
+    .invoice-tag {
+      background: #e6f4ea;
+      color: #137333;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 12px;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+
+    .invoice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      background: #fdfaf7;
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .invoice-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+      font-size: 0.88rem;
+    }
+
+    .invoice-table th {
+      text-align: left;
+      padding: 8px 10px;
+      border-bottom: 2px solid var(--border-color);
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    .invoice-table td {
+      padding: 10px;
+      border-bottom: 1px solid #f2ece7;
+    }
+
+    .invoice-total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      border-top: 2px solid var(--border-color);
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text-dark);
+    }
+
+    .invoice-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 1.5rem;
+    }
+
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #invoiceModal, #invoiceModal * {
+        visibility: visible;
+      }
+      #invoiceModal {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: #fff;
+        padding: 0;
+      }
+      .invoice-actions, .modal-close-btn {
+        display: none !important;
+      }
     }
 
     /* Floating WhatsApp Button */
@@ -1297,7 +1408,7 @@
 
   <!-- Cute Top Banner -->
   <div class="cute-top-strip">
-    <span>🌸 Handcrafted in Ulhasnagar</span>
+    <span>🌸 Handcrafted in Ulhasnagar</span>[span_1](start_span)[span_1](end_span)
     <span>•</span>
     <span>Everlasting Pipe-Cleaner Blooms</span>
     <span>•</span>
@@ -1310,7 +1421,7 @@
       <div class="brand-icon"><i class="fa-solid fa-spa"></i></div>
       <div>
         <div class="brand-title">The Flower Treasure</div>
-        <div class="brand-subtitle">Artisanal Florals • Ulhasnagar</div>
+        <div class="brand-subtitle">Artisanal Florals • Ulhasnagar</div>[span_2](start_span)[span_2](end_span)
       </div>
     </a>
     
@@ -1338,8 +1449,8 @@
       <div class="hero-badge">
         <i class="fa-solid fa-heart"></i> Handcrafted Pipe-Cleaner Florals
       </div>
-      <h1>Flowers that <span>never fade</span>.</h1>
-      <p>Everlasting velvet bouquets hand-shaped with love in Ulhasnagar. Tailored for birthdays, anniversaries, graduations, and surprise gifts that endure forever.</p>
+      <h1>Flowers that <span>never fade</span>.</h1>[span_3](start_span)[span_3](end_span)
+      <p>Everlasting velvet bouquets hand-shaped with love in Ulhasnagar[span_4](start_span)[span_4](end_span). Tailored for birthdays, anniversaries, graduations, and surprise gifts that endure forever.</p>
       
       <div class="hero-buttons">
         <a href="#catalog" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i> Explore Bouquets</a>
@@ -1365,16 +1476,16 @@
       </div>
     </div>
     <div class="benefit-item">
-      <div class="benefit-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+      <div class="benefit-icon"><i class="fa-solid fa-file-invoice"></i></div>
       <div class="benefit-text">
-        <h4>100% Handmade</h4>
-        <p>Each petal individually hand-crafted.</p>
+        <h4>Instant Bill Receipt</h4>
+        <p>Printable invoices on every order.</p>
       </div>
     </div>
     <div class="benefit-item">
       <div class="benefit-icon"><i class="fa-solid fa-receipt"></i></div>
       <div class="benefit-text">
-        <h4>Instant Tracking ID</h4>
+        <h4>Live Tracking ID</h4>
         <p>Live progress tracking on every order.</p>
       </div>
     </div>
@@ -1482,10 +1593,9 @@
           <span style="font-size: 0.75rem; color: var(--text-muted);"><i class="fa-solid fa-sparkles"></i> Handcrafted Scale</span>
         </div>
 
-        <!-- The Realistic Vector Bouquet Stage -->
         <div class="bouquet-stage">
           
-          <!-- Realistic Chenille Pipe Heart Topper Add-on[span_0](start_span)[span_0](end_span)[span_1](start_span)[span_1](end_span) -->
+          <!-- Red Pipe Cleaner Heart Topper Add-on[span_5](start_span)[span_5](end_span)[span_6](start_span)[span_6](end_span) -->
           <div class="pipe-cleaner-heart" id="addonHeart">
             <svg width="60" height="60" viewBox="0 0 100 100">
               <path d="M50,85 C20,55 5,35 15,18 C25,2 45,10 50,28 C55,10 75,2 85,18 C95,35 80,55 50,85 Z" fill="none" stroke="#d91b35" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
@@ -1493,7 +1603,7 @@
             </svg>
           </div>
 
-          <!-- Twinkling Warm Fairy Lights -->
+          <!-- Twinkling Fairy Lights -->
           <div class="fairy-lights-layer" id="fairyLightsLayer">
             <div class="fairy-glow-dot" style="top: 50px; left: 32%;"></div>
             <div class="fairy-glow-dot" style="top: 85px; right: 28%; animation-delay: 0.3s;"></div>
@@ -1503,13 +1613,10 @@
           </div>
 
           <!-- Stems & Flower Bunch Stage -->
-          <div class="blooms-cluster" id="bloomsCluster">
-            <!-- Dynamically populated vector flowers -->
-          </div>
+          <div class="blooms-cluster" id="bloomsCluster"></div>
 
-          <!-- Realistic Korean Paper Sleeve -->
+          <!-- Korean Paper Sleeve -->
           <div class="korean-wrap-paper wrap-black-gold" id="koreanWrapSleeve">
-            <!-- Realistic Satin Ribbon Bow -->
             <div class="satin-bow-realistic">
               <div class="bow-center-knot"></div>
             </div>
@@ -1517,7 +1624,6 @@
 
         </div>
 
-        <!-- Spec Breakdown & Instant Cart Trigger -->
         <div class="summary-spec-list">
           <div class="summary-item"><span>Selected Bloom:</span> <strong id="sumFlower">Blush Tulip</strong></div>
           <div class="summary-item"><span>Arrangement:</span> <strong id="sumCount">Single Stem</strong></div>
@@ -1549,7 +1655,7 @@
       <div style="text-align: center;">
         <i class="fa-solid fa-magnifying-glass-location" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 10px;"></i>
         <h3>Enter Your Tracking ID</h3>
-        <p style="color: var(--text-muted); font-size: 0.9rem;">(Format: TFT-XXXXXX generated during your WhatsApp order checkout)</p>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">(Format: TFT-XXXXXX generated during your checkout)</p>
       </div>
 
       <div class="tracking-search-wrap">
@@ -1591,6 +1697,12 @@
         </div>
 
         <div id="orderItemsSummary" style="margin-top: 2rem; background: #faf7f2; border-radius: 12px; padding: 14px; font-size: 0.88rem;"></div>
+        
+        <div style="margin-top: 1rem; text-align: right;">
+          <button class="nav-btn" id="trackViewBillBtn" style="padding: 6px 16px; font-size: 0.82rem;">
+            <i class="fa-solid fa-file-invoice"></i> View Official Invoice
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -1632,7 +1744,7 @@
         <div class="form-row">
           <div class="form-group">
             <label>City *</label>
-            <input type="text" id="custCity" class="form-input" placeholder="e.g. Ulhasnagar / Mumbai" />
+            <input type="text" id="custCity" class="form-input" placeholder="e.g. Ulhasnagar / Mumbai" />[span_7](start_span)[span_7](end_span)
           </div>
           <div class="form-group">
             <label>Pincode *</label>
@@ -1664,7 +1776,6 @@
           </div>
         </div>
 
-        <!-- Live Payment Helper Box -->
         <div class="upi-info-card" id="upiInfoCard">
           <div style="font-weight: 700; color: #15803d; margin-bottom: 2px;">
             <i class="fa-solid fa-circle-check"></i> Direct UPI & Scanner Active
@@ -1695,7 +1806,7 @@
       <button class="modal-close-btn" onclick="document.getElementById('historyModal').classList.remove('active')"><i class="fa-solid fa-xmark"></i></button>
       <div class="modal-info">
         <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-clock-rotate-left" style="color: var(--primary);"></i> Your Order History</h3>
-        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">Orders placed from this browser are saved here for quick tracking:</p>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">Orders placed from this browser are saved here for quick tracking & bill download:</p>
         
         <div id="historyListContainer" style="max-height: 350px; overflow-y: auto;"></div>
       </div>
@@ -1721,6 +1832,78 @@
     </div>
   </div>
 
+  <!-- ======================================================== -->
+  <!-- OFFICIAL PRINTABLE BILL / DIGITAL INVOICE MODAL -->
+  <!-- ======================================================== -->
+  <div class="modal-overlay" id="invoiceModal" onclick="closeModal(event, 'invoiceModal')">
+    <div class="invoice-card" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="document.getElementById('invoiceModal').classList.remove('active')"><i class="fa-solid fa-xmark"></i></button>
+      
+      <!-- Invoice Header -->
+      <div class="invoice-header">
+        <div class="invoice-brand">
+          <h2>The Flower Treasure</h2>
+          <p>Handcrafted Everlasting Pipe-Cleaner Florals</p>
+          <p>Ulhasnagar, Maharashtra • +91 88881 60377</p>[span_8](start_span)[span_8](end_span)
+        </div>
+        <div class="invoice-meta">
+          <span class="invoice-tag">OFFICIAL BILL / RECEIPT</span>
+          <div style="font-size: 0.85rem; font-weight: 800;" id="invNumber">INV #TFT-849201</div>
+          <div style="font-size: 0.78rem; color: var(--text-muted);" id="invDate">Date: 10 Nov 2026</div>
+        </div>
+      </div>
+
+      <!-- Customer & Delivery Info Grid -->
+      <div class="invoice-grid">
+        <div>
+          <div style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Customer Details</div>
+          <div style="font-weight: 700;" id="invCustName">Khushi Jethwani</div>
+          <div id="invCustPhone">+91 8888160377</div>
+        </div>
+        <div>
+          <div style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Delivery Destination</div>
+          <div id="invCustAddress">Ulhasnagar, Maharashtra</div>[span_9](start_span)[span_9](end_span)
+          <div style="font-size: 0.78rem; color: #16a34a; font-weight: 700;">● Handcrafted Delivery</div>
+        </div>
+      </div>
+
+      <!-- Itemized Table -->
+      <table class="invoice-table">
+        <thead>
+          <tr>
+            <th>Item Description</th>
+            <th style="text-align: right;">Amount</th>
+          </tr>
+        </thead>
+        <tbody id="invItemsBody">
+          <!-- Injected via JS -->
+        </tbody>
+      </table>
+
+      <!-- Grand Total -->
+      <div class="invoice-total-row">
+        <span>Grand Total Paid:</span>
+        <span style="color: var(--primary-dark);" id="invTotalAmount">₹0</span>
+      </div>
+
+      <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 10px; border-top: 1px dashed #ede5de; padding-top: 8px;">
+        <strong>Payment Mode:</strong> <span id="invPaymentMode">UPI Transfer (8888160377)</span><br>
+        <strong>Note:</strong> Handcrafted pipe-cleaner flowers never wilt or fade[span_10](start_span)[span_10](end_span). Thank you for supporting our local artisanal boutique!
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="invoice-actions">
+        <button class="btn btn-primary" style="flex: 1; justify-content: center;" onclick="window.print()">
+          <i class="fa-solid fa-print"></i> Print / Save as PDF
+        </button>
+        <button class="btn btn-secondary" style="flex: 1; justify-content: center;" onclick="document.getElementById('invoiceModal').classList.remove('active')">
+          Close
+        </button>
+      </div>
+
+    </div>
+  </div>
+
   <!-- Floating WhatsApp Quick Button -->
   <a href="https://wa.me/918888160377?text=Hi%20Khushi!%20I%20have%20an%20inquiry%20about%20your%20handcrafted%20flower%20bouquets%20at%20The%20Flower%20Treasure." target="_blank" class="floating-wa-btn" title="Chat with us on WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
@@ -1732,7 +1915,7 @@
       <div class="footer-brand">
         <h3>The Flower Treasure</h3>
         <p style="color: #bbb; max-width: 320px; font-size: 0.95rem; margin-top: 0.5rem;">
-          Everlasting pipe-cleaner floral artistry hand-made in Ulhasnagar by Khushi Jethwani[span_2](start_span)[span_2](end_span). Designed to make special memories permanent.
+          Everlasting pipe-cleaner floral artistry hand-made in Ulhasnagar by Khushi Jethwani[span_11](start_span)[span_11](end_span). Designed to make special memories permanent.
         </p>
         <div class="social-links">
           <a href="https://instagram.com/the.flowertreasure" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -1749,7 +1932,7 @@
 
       <div>
         <h4 style="color: var(--accent-gold); margin-bottom: 0.8rem;">Location & Shipping</h4>
-        <p style="color: #ccc; font-size: 0.9rem;"><i class="fa-solid fa-location-dot"></i> Ulhasnagar, Maharashtra[span_3](start_span)[span_3](end_span)</p>
+        <p style="color: #ccc; font-size: 0.9rem;"><i class="fa-solid fa-location-dot"></i> Ulhasnagar, Maharashtra[span_12](start_span)[span_12](end_span)</p>
         <p style="color: #ccc; font-size: 0.9rem; margin-top: 0.4rem;"><i class="fa-solid fa-phone"></i> +91 88881 60377</p>
         <p style="color: #ccc; font-size: 0.9rem; margin-top: 0.4rem;"><i class="fa-solid fa-truck-fast"></i> Express Delivery in Mumbai & Courier Across India</p>
       </div>
@@ -1807,7 +1990,6 @@
     let cart = [];
     let selectedPayment = 'UPI / QR Scan (8888160377)';
 
-    // Realistic Vector Flower SVG Generators (High-Fidelity Pipe-Cleaner Look)
     const flowerSvgs = {
       tulip: `
         <svg width="74" height="150" viewBox="0 0 100 190">
@@ -1834,7 +2016,6 @@
         <svg width="86" height="150" viewBox="0 0 100 190">
           <path d="M50,85 Q50,140 50,190" stroke="#48814d" stroke-width="7" stroke-linecap="round"/>
           <path d="M50,130 Q25,115 28,135 Q42,140 50,145" fill="#589d5f"/>
-          <!-- 6 Stargazer Petals -->
           <path d="M50,55 Q50,10 50,5 Q55,30 50,55" fill="#e57399" stroke="#b03060" stroke-width="2"/>
           <path d="M50,55 Q15,30 10,25 Q30,45 50,55" fill="#f08da5" stroke="#b03060" stroke-width="2"/>
           <path d="M50,55 Q85,30 90,25 Q70,45 50,55" fill="#f08da5" stroke="#b03060" stroke-width="2"/>
@@ -1913,7 +2094,6 @@
       }
     }
 
-    // Builder Visualizer Engine
     function updateBuilder(type, name, price, flowerType, el, extra) {
       el.parentElement.querySelectorAll('.select-card').forEach(c => c.classList.remove('selected'));
       el.classList.add('selected');
@@ -1975,7 +2155,6 @@
           </div>
         `;
       } else {
-        // 5 Stems Grand Bunch
         stemsHTML = `
           <div class="vector-stem" style="transform: rotate(-24deg) translateY(20px) scale(0.85); margin-right: -30px;">
             ${svg}
@@ -2040,7 +2219,6 @@
       }
     }
 
-    // Cart Management
     function addToCart(title, price) {
       cart.push({ title, price });
       updateCartUI();
@@ -2104,7 +2282,9 @@
       alert("UPI Number (8888160377) copied to clipboard!");
     }
 
-    // Order Tracking & Storage
+    // ==========================================
+    // ORDER TRACKING, HISTORY & INVOICE SYSTEM
+    // ==========================================
     function getSavedOrders() {
       const stored = localStorage.getItem('tft_orders');
       return stored ? JSON.parse(stored) : [];
@@ -2134,12 +2314,17 @@
               <span class="history-tracking-tag">${ord.trackingId}</span>
               <span style="color: #666;">${ord.date}</span>
             </div>
-            <div style="font-size: 0.92rem; font-weight: 700; margin: 4px 0;">${ord.items.join(', ')}</div>
+            <div style="font-size: 0.92rem; font-weight: 700; margin: 4px 0;">${ord.items.map(it => it.title || it).join(', ')}</div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
               <span style="font-weight: 800; color: var(--primary-dark);">₹${ord.total}</span>
-              <button class="nav-btn" style="padding: 4px 12px; font-size: 0.78rem;" onclick="trackSpecificOrder('${ord.trackingId}')">
-                Track Live <i class="fa-solid fa-arrow-right"></i>
-              </button>
+              <div style="display: flex; gap: 6px;">
+                <button class="nav-btn" style="padding: 4px 10px; font-size: 0.75rem;" onclick="viewInvoiceModal('${ord.trackingId}')">
+                  <i class="fa-solid fa-file-invoice"></i> Bill
+                </button>
+                <button class="nav-btn" style="padding: 4px 10px; font-size: 0.75rem;" onclick="trackSpecificOrder('${ord.trackingId}')">
+                  Track <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
             </div>
           </div>
         `).join('');
@@ -2173,17 +2358,49 @@
         document.getElementById('orderTrackDate').innerText = `Placed on: ${found.date} • Deliver to: ${found.city}`;
         document.getElementById('orderTrackStatusBadge').innerText = "In Progress";
         document.getElementById('orderItemsSummary').innerHTML = `
-          <strong>Items in Bouquet Package:</strong> ${found.items.join(' + ')}<br>
-          <strong>Total Paid/Payable:</strong> ₹${found.total} (${found.payment})
+          <strong>Items in Bouquet Package:</strong> ${found.items.map(it => it.title || it).join(' + ')}<br>
+          <strong>Total Amount:</strong> ₹${found.total} (${found.payment})
         `;
+        document.getElementById('trackViewBillBtn').onclick = function() {
+          viewInvoiceModal(found.trackingId);
+        };
       } else {
         document.getElementById('orderTrackTitle').innerText = `Order #${rawId}`;
-        document.getElementById('orderTrackDate').innerText = `Placed with The Flower Treasure Ulhasnagar[span_4](start_span)[span_4](end_span)`;
+        document.getElementById('orderTrackDate').innerText = `Placed with The Flower Treasure Ulhasnagar[span_13](start_span)[span_13](end_span)`;
         document.getElementById('orderTrackStatusBadge').innerText = "Verified Order";
         document.getElementById('orderItemsSummary').innerHTML = `
           <strong>Status:</strong> Your order is active in our workshop. Chat with Khushi on WhatsApp for custom additions or express delivery updates!
         `;
+        document.getElementById('trackViewBillBtn').onclick = function() {
+          alert("Official invoice is stored locally on the ordering device.");
+        };
       }
+    }
+
+    // View Digital Invoice Modal
+    function viewInvoiceModal(trackingId) {
+      const orders = getSavedOrders();
+      const found = orders.find(o => o.trackingId.toUpperCase() === trackingId.toUpperCase());
+      if (!found) return;
+
+      document.getElementById('invNumber').innerText = `INV #${found.trackingId}`;
+      document.getElementById('invDate').innerText = `Date: ${found.date}`;
+      document.getElementById('invCustName').innerText = found.name || 'Valued Customer';
+      document.getElementById('invCustPhone').innerText = found.phone || '+91 8888160377';
+      document.getElementById('invCustAddress').innerText = (found.address ? found.address + ', ' : '') + found.city;
+      document.getElementById('invPaymentMode').innerText = found.payment || 'UPI';
+      document.getElementById('invTotalAmount').innerText = `₹${found.total}`;
+
+      const tbody = document.getElementById('invItemsBody');
+      tbody.innerHTML = found.items.map(it => `
+        <tr>
+          <td><strong>${it.title || it}</strong><br><span style="font-size: 0.75rem; color: #888;">Handmade Pipe-Cleaner Florals</span></td>
+          <td style="text-align: right; font-weight: 700;">₹${it.price || found.total}</td>
+        </tr>
+      `).join('');
+
+      document.getElementById('historyModal').classList.remove('active');
+      document.getElementById('invoiceModal').classList.add('active');
     }
 
     // Checkout & Order Generation directly to +91 88881 60377
@@ -2209,18 +2426,21 @@
       const today = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
       let total = cart.reduce((acc, curr) => acc + curr.price, 0);
 
+      // Save complete order snapshot for Bill generation
       saveOrderToHistory({
         trackingId: trackingId,
         date: today,
-        items: cart.map(i => i.title),
+        items: [...cart],
         total: total,
         payment: selectedPayment,
         name: name,
-        city: city
+        phone: phone,
+        address: address,
+        city: city + ' - ' + pincode
       });
 
       let message = "🌸 *NEW ORDER - THE FLOWER TREASURE* 🌸%0A";
-      message += `*Tracking ID:* ${trackingId}%0A%0A`;
+      message += `*Tracking ID & Invoice No:* ${trackingId}%0A%0A`;
       
       message += "*Items in Basket:*%0A";
       cart.forEach((item, idx) => {
@@ -2242,13 +2462,15 @@
 
       message += `My Order Tracking ID is *${trackingId}*. Please confirm order availability and share the UPI QR code!`;
 
+      // Open Invoice right away for the user
+      viewInvoiceModal(trackingId);
+
+      // Clear Cart and Close Drawer
       cart = [];
       updateCartUI();
       toggleCart();
 
-      document.getElementById('trackInput').value = trackingId;
-      trackOrderManual();
-
+      // Open WhatsApp to Khushi's number (+91 88881 60377)
       const phoneNumber = "918888160377";
       window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
     }
